@@ -8,7 +8,7 @@ public class QuesoOaxaca implements Queso {
      * Variable que indica la temperatura.
      * para derretir el queso oaxaca.
      */
-    private static final int MELTING_TEMPERATURE = 27;
+    private static final int MELTING_TEMPERATURE = 22;
     /**
      * Variable que indica si el queso
      * está derretido.

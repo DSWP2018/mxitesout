@@ -8,7 +8,7 @@ public class QuesoAdobera implements Queso {
      * Variable que indica la temperatura.
      * para derretir el queso adobera.
      */
-    private static final int MELTING_TEMPERATURE = 25;
+    private static final int MELTING_TEMPERATURE = 20;
     /**
      * Variable que indica si el queso
      * está derretido.

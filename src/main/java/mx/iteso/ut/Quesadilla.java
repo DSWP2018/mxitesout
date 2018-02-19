@@ -49,14 +49,19 @@ public class Quesadilla {
 
     }
 
-    public final String prepareDouble(){
+    /**Método que determina el tipo de quesadilla obtenida.
+     * Compara los atributos meltingTemperature y toastTemperature de
+     * Queso, TortillaA y Tortilla (respectivamente) contra la temperatura del
+     * objeto quesadilla.
+     * @return el resultado de las comparaciones.*/
+    public final String prepareDouble() {
 
-        while(getQueso().getCurrentTemperature()
+        while (getQueso().getCurrentTemperature()
                 < getQueso().getMeltingTemperature()
                 && getTortillaA().getCurrentTemperature()
                 < getTortillaA().getToastTemperature()
                 && getTortilla().getCurrentTemperature()
-                < getTortilla().getToastTemperature()){
+                < getTortilla().getToastTemperature()) {
 
             getTortillaA().setCurrentTemperature(getTortillaA()
                     .getCurrentTemperature() + getHeatLevel());
@@ -79,18 +84,24 @@ public class Quesadilla {
             }
         }
 
-        if(getTortilla().isToasted() && getTortillaA().isToasted() && getQueso().isMelted()){
+        if (getTortilla().isToasted() && getTortillaA().isToasted()
+                && getQueso().isMelted()) {
             return "Godlike quesadilla";
-        } else if(!getTortilla().isToasted() && getTortillaA().isToasted() && getQueso().isMelted()){
+        } else if (!getTortilla().isToasted() && getTortillaA().isToasted()
+                && getQueso().isMelted()) {
             return "Mediocre quesadilla";
-        } else if(!getTortilla().isToasted() && getTortillaA().isToasted() && !getQueso().isMelted()){
+        } else if (!getTortilla().isToasted() && getTortillaA().isToasted()
+                && !getQueso().isMelted()) {
             return "Awful quesadilla";
-        } else if(!getTortilla().isToasted() && !getTortillaA().isToasted() && getQueso().isMelted()){
+        } else if (!getTortilla().isToasted() && !getTortillaA().isToasted()
+                && getQueso().isMelted()) {
             return "Average quesadilla";
-        } else if(getTortilla().isToasted() && getTortillaA().isToasted() && !getQueso().isMelted()){
+        } else if (getTortilla().isToasted() && getTortillaA().isToasted()
+                && !getQueso().isMelted()) {
             return "Horrible quesadilla";
-        } else{
-            //!getTortilla().isToasted() && !getTortillaA().isToasted() && !getQueso().isMelted()
+        } else {
+            //!getTortilla().isToasted() && !getTortillaA().isToasted()
+            // && !getQueso().isMelted()
             return "Your microwave died.";
         }
 

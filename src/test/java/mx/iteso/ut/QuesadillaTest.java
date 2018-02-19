@@ -26,45 +26,62 @@ public class QuesadillaTest{
 
     @Test
     public void perfectQuesadilla(){
-        // ¿Para qué me sirve poner estos 4 when...
-        when(mockedTortilla.getToastTemperature()).thenReturn(20);
-        when(mockedTortilla.getCurrentTemperature()).thenReturn(2,6,10,14,18,22);
-
-        when(mockedQueso.getMeltingTemperature()).thenReturn(15);
-        when(mockedQueso.getCurrentTemperature()).thenReturn(2,6,10,14,18,22);
-
-        // ... si con éstos dos puedo hacer que la prueba se valide?
         when(mockedTortilla.isToasted()).thenReturn(true);
         when(mockedQueso.isMelted()).thenReturn(true);
 
-        // Supongo que sirven para la ejecución del while, pero no entiendo cómo probar
-        // que se está entrando al ciclo y que se están usando los valores de 2, 6, 10...
-        // Profe, la verdad me gustaría tener una clase guiada por ud sobre este tema, no entiendo muchas cosas
-        assertSame("Perfect quesadilla", quesadilla.prepareSingle());
+        when(mockedTortilla.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+        when(mockedTortilla.getToastTemperature()).thenReturn(10);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+
+        assertEquals("Perfect quesadilla",quesadilla.prepareSingle());
+        verify(mockedTortilla,times(1)).toast(true);
+        verify(mockedQueso,times(1)).melt(true);
     }
 
     @Test
     public void goodQuesadilla(){
-        when(mockedTortilla.isToasted()).thenReturn(false);
         when(mockedQueso.isMelted()).thenReturn(true);
+        when(mockedTortilla.isToasted()).thenReturn(false);
 
-        assertSame("Good quesadilla", quesadilla.prepareSingle());
+        when(mockedTortilla.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+        when(mockedTortilla.getToastTemperature()).thenReturn(20);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(10);
+
+        assertEquals("Good quesadilla",quesadilla.prepareSingle());
+        verify(mockedTortilla,never()).toast(true);
+        verify(mockedQueso,times(1)).melt(true);
     }
 
     @Test
     public void terribleQuesadilla(){
-        when(mockedTortilla.isToasted()).thenReturn(true);
         when(mockedQueso.isMelted()).thenReturn(false);
+        when(mockedTortilla.isToasted()).thenReturn(true);
 
-        assertSame("Terrible quesadilla", quesadilla.prepareSingle());
+        when(mockedTortilla.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+        when(mockedTortilla.getToastTemperature()).thenReturn(10);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(20);
+
+        assertEquals("Terrible quesadilla",quesadilla.prepareSingle());
+        verify(mockedTortilla,times(1)).toast(true);
+        verify(mockedQueso,never()).melt(true);
     }
 
     @Test
     public void noGas(){
-        when(mockedTortilla.isToasted()).thenReturn(false);
         when(mockedQueso.isMelted()).thenReturn(false);
+        when(mockedTortilla.isToasted()).thenReturn(false);
 
-        assertSame("You ran out of gas", quesadilla.prepareSingle());
+        when(mockedTortilla.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+        when(mockedTortilla.getToastTemperature()).thenReturn(1);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,8,14);
+        when(mockedQueso.getMeltingTemperature()).thenReturn(1);
+
+        assertEquals("You ran out of gas",quesadilla.prepareSingle());
+        verify(mockedTortilla,never()).toast(true);
+        verify(mockedQueso,never()).melt(true);
     }
 
 }

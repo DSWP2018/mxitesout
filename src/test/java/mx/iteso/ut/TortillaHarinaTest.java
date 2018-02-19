@@ -10,6 +10,8 @@ public class TortillaHarinaTest {
     @Before
     public void setUp(){
         miTortilla.setCurrentTemperature(0);
+        miTortilla.setToastTemperature(20);
+        miTortilla.toast(true);
     }
 
     @Test
@@ -23,11 +25,13 @@ public class TortillaHarinaTest {
     }
 
     @Test
-    public void toasted(){
-        miTortilla.setCurrentTemperature(22);
+    public void trueToast(){
         Assert.assertEquals(true, miTortilla.isToasted());
+    }
 
-        miTortilla.setCurrentTemperature(18);
+    @Test
+    public void flaseToast(){
+        miTortilla.toast(false);
         Assert.assertEquals(false, miTortilla.isToasted());
     }
 }

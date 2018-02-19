@@ -13,6 +13,8 @@ public class QuesoAmarilloTest {
     @Before
     public void setUp(){
         miQueso.setCurrentTemperature(0);
+        miQueso.setMeltingTemperature(20);
+        miQueso.melt(true);
     }
 
     @Test
@@ -26,12 +28,13 @@ public class QuesoAmarilloTest {
     }
 
     @Test
-    public void melted(){
-        miQueso.setCurrentTemperature(22);
+    public void trueMelt(){
         Assert.assertEquals(true, miQueso.isMelted());
+    }
 
-        miQueso.setCurrentTemperature(18);
+    @Test
+    public void falseMelt(){
+        miQueso.melt(false);
         Assert.assertEquals(false, miQueso.isMelted());
-
     }
 }

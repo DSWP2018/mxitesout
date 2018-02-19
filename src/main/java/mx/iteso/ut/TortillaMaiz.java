@@ -1,44 +1,50 @@
 package mx.iteso.ut;
-
-public class TortillaMaiz implements Tortilla{
-
-	private boolean toasted;
-	private int toastTemp;
-	private int currentTemp;
-	
-	public TortillaMaiz(){
-		this.toasted = true;
-		this.toastTemp = 30;
-		this.currentTemp = 0;
-	}
-	
-	public TortillaMaiz(boolean toasted,int toastTemp,int currentTemp){
-		this.toasted = toasted;
-		this.toastTemp = toastTemp;
-		this.currentTemp = currentTemp;
-	}
-	
-	public boolean isToasted(){
-		return toasted;
-	}
-	
-    public int getToastTemperature(){
-    	return toastTemp;
-    }
-    
-    public int getCurrentTemperature(){
-    	return currentTemp;
-    }
-    
-    public void setCurrentTemperature(int temp){
-    	currentTemp = temp;
-    }
-    
-    public void toast(boolean toasted){
-    	if(toasted == false)
-    		this.toasted = true;
-    	else
-    		this.toasted = true;
-    }
-	
+/** Clase que implementa a Tortilla. */
+public class TortillaMaiz implements Tortilla {
+/** ¿Está tostada?  */
+private boolean toasted;
+/** Temperatura de tostado. */
+private int toastTemp;
+/** Temperatura actual. */
+private int currentTemp;
+/** Constructor de la clase. */
+public TortillaMaiz() {
+this.toasted = true;
+this.currentTemp = 0;
+}
+/** Constructor con valores.
+ * @param istoasted .
+ * @param thetoastTemp .
+ * @param thecurrentTemp .*/
+public TortillaMaiz(final boolean istoasted,
+final int thetoastTemp, final int thecurrentTemp) {
+this.toasted = istoasted;
+this.toastTemp = thetoastTemp;
+this.currentTemp = thecurrentTemp;
+}
+/** Devuelve boolean de si está tostada.
+* @return toasted . */
+public final boolean isToasted() {
+return toasted;
+}
+/** Devuelve la temperatura con que se tuesta.
+ * @return toastTemp . */
+public final int getToastTemperature() {
+return toastTemp;
+}
+/** Devuelve la temperatura actual.
+ * @return currentTemp . */
+public final int getCurrentTemperature() {
+return currentTemp;
+}
+/** Asigna la temperatura actual.
+ * @param temp . */
+public final void setCurrentTemperature(final int temp) {
+currentTemp = temp;
+}
+/** Derrite el queso.
+ * @param istoasted . */
+public final void toast(final boolean istoasted) {
+this.toasted = istoasted;
+}
 }

@@ -1,32 +1,68 @@
 package mx.iteso.ut;
 
-public class BlueTortilla implements Tortilla{
+/**
+ *
+ */
+public class BlueTortilla implements Tortilla {
+    /**
+     * toasted.
+     */
     private boolean toasted;
-    private final int TOAST_TEMPERATURE;
+    /**
+     * toast temperature.
+     */
+    private final int toastTemperature;
+    /**
+     * current temperature.
+     */
     private int currentTemperature;
 
-    public BlueTortilla(){
+    /**
+     * constructor.
+     */
+    public BlueTortilla() {
         toasted = false;
-        TOAST_TEMPERATURE = 19;
+        toastTemperature = 0;
         currentTemperature = 0;
     }
-    public boolean isToasted() {
+
+    /**
+     *
+     * @return toasted
+     */
+    public final boolean isToasted() {
         return toasted;
     }
 
-    public int getToastTemperature() {
-        return TOAST_TEMPERATURE;
+    /**
+     *
+     * @return toast temperature
+     */
+    public final int getToastTemperature() {
+        return toastTemperature;
     }
 
-    public int getCurrentTemperature() {
+    /**
+     *
+     * @return current temperature
+     */
+    public final int getCurrentTemperature() {
         return currentTemperature;
     }
 
-    public void setCurrentTemperature(int temp) {
+    /**
+     *
+     * @param temp New temperature
+     */
+    public final void setCurrentTemperature(final int temp) {
         currentTemperature = temp;
     }
 
-    public void toast(boolean toasted) {
-        this.toasted = toasted;
+    /**
+     *
+     * @param sToasted toasted
+     */
+    public final void toast(final boolean sToasted) {
+        this.toasted = sToasted;
     }
 }

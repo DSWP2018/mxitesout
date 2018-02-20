@@ -1,7 +1,5 @@
 package mx.iteso.ut;
-
-
-
+/**Clase QuesoOaxaca. */
 public class QuesoOaxaca implements Queso {
     private boolean melted;
     private int cTemperature = 25;

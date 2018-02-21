@@ -68,7 +68,7 @@ package mx.iteso.ut;
      * Método para preparar una quesadilla doble.
      * @return Un string dependiendo del tipo de quesadilla que resultó
      */
-    public final String prepareDouble(){
+    public final String prepareDouble() {
         while (getQueso().getCurrentTemperature()
                 < getQueso().getMeltingTemperature()
                 && getTortilla().getCurrentTemperature()
@@ -100,27 +100,30 @@ package mx.iteso.ut;
         }
 
         //tortillas tostadas queso derretido
-        if (getQueso().isMelted() && getTortilla().isToasted() && getTortilla().isToasted()) {
+        if (getQueso().isMelted() && getTortilla().isToasted()
+                && getTortilla().isToasted()) {
             return "Excelent double";
         }
         //1 tortilla no tostada, queso derretido
-        if (getQueso().isMelted() && !getTortilla().isToasted() && getTortilla1().isToasted()) {
+        if (getQueso().isMelted() && !getTortilla().isToasted()
+                && getTortilla1().isToasted()) {
             return "Good double";
         }
         //1 tortilla no tostada queso no derretido
-        if (!getQueso().isMelted() && !getTortilla().isToasted() && getTortilla1().isToasted()) {
+        if (!getQueso().isMelted() && !getTortilla().isToasted()
+                && getTortilla1().isToasted()) {
             return "Horrible double";
         }
         //2 tortillas no tostadas, queso derretido.
-        if (getQueso().isMelted() && !getTortilla().isToasted() && !getTortilla1().isToasted()) {
+        if (getQueso().isMelted() && !getTortilla().isToasted()
+                && !getTortilla1().isToasted()) {
             return "Almost good double";
         }
         //tortillas tostadas, queso no derretido
-        if (!getQueso().isMelted() && getTortilla().isToasted() && getTortilla1().isToasted()) {
+        if (!getQueso().isMelted() && getTortilla().isToasted()
+                && getTortilla1().isToasted()) {
             return "Bad double";
-        }
-        //2 tortillas no tostadas , queso no derretido
-        else {
+        } else {
                 return "Turn the stove on";
         }
     }

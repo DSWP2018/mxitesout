@@ -23,7 +23,7 @@ public class QuesoMozarella implements Queso {
     public QuesoMozarella() {
         this.melt = false;
         this.currentTemperature = 0;
-        this.meltTemp = 18;
+        this.meltTemp = 0;
     }
 
     /**

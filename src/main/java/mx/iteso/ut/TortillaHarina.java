@@ -1,34 +1,70 @@
 package mx.iteso.ut;
 
-public class TortillaHarina implements Tortilla{
-
+/**
+ * Clase que implementa la interfaz Tortilla.
+ * Tortilla de tipo harina
+ * @version 1.0 12/02/18
+ * @author Mariana Salas
+ */
+public class TortillaHarina implements Tortilla {
+    /**
+     * Determina si está tostada la tortilla.
+     */
     private boolean toast;
+    /**
+     * Temperatura actual de la tortilla.
+     * Temperatura de tostado.
+     */
     private int currentTemp, toastTemp;
 
-    public TortillaHarina(){
+    /**
+     * Método constructor.
+     * Inicializa las variables.
+     */
+    public TortillaHarina() {
         this.toast = false;
         this.currentTemp = 0;
-        this.toastTemp = 20;
+        this.toastTemp = 0;
     }
 
-    public boolean isToasted(){
+    /**
+     * Método para saber si la tortilla está tostada.
+     * @return toast
+     */
+    public final boolean isToasted() {
         return  toast;
     }
 
-    public int getToastTemperature(){
+    /**
+     * Método para obtener la temperatura de tostado.
+     * @return temperatura de tostado
+     */
+    public final int getToastTemperature() {
         return this.toastTemp;
     }
 
-    public int getCurrentTemperature(){
+    /**
+     * Método para obtener la temperatura actual de la tortilla.
+     * @return temperatura actual
+     */
+    public final int getCurrentTemperature() {
         return this.currentTemp;
     }
 
-    public void setCurrentTemperature(int temp){
+    /**
+     * Método para establecer la temperatura actual.
+     * @param temp temperatura que se va a establecer
+     */
+    public final void setCurrentTemperature(final int temp) {
         this.currentTemp = temp;
 
     }
 
-    public void toast(boolean toasted){
+    /**
+     * Método para saber si la tortilla está tostada.
+     * @param toasted boolean que establece si está tostado o no.
+     */
+    public final void toast(final boolean toasted) {
         this.toast = toasted;
     }
 

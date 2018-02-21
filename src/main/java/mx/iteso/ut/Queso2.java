@@ -6,7 +6,7 @@
  * */
 package mx.iteso.ut;
 /**
- * Info about this package doing something for package-info.java file.
+ * clase que implementa interfaz queso.
  */
 public class Queso2 implements Queso {
     /**

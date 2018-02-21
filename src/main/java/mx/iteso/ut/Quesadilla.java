@@ -23,24 +23,24 @@ public class Quesadilla {
      * con cierto queso y tortilla
      */
     public final String prepareSingle() {
-        Queso gqueso = getQueso();
-        Tortilla gtortilla = getTortilla();
-        boolean tMelting = gqueso.getCurrentTemp() < gqueso.getMeltingTemp();
-        boolean tToast = gtortilla.getCurrentTemp() < gtortilla.getToastTemp();
+        while (getQueso().getCurrentTemp()
+                < getQueso().getMeltingTemp()
+                && getTortilla().getCurrentTemp()
+                < getTortilla().getToastTemp()) {
+            getTortilla().setCurrentTemp(getTortilla().getCurrentTemp()
+                    + getHeatLevel());
+            getQueso().setCurrentTemp(getQueso().getCurrentTemp()
+                    + getHeatLevel());
+            if (getTortilla().getCurrentTemp()
+                    >= getTortilla().getToastTemp()) {
+                getTortilla().toast(true);
+            }
+            if (getQueso().getCurrentTemp()
+                    >= getQueso().getMeltingTemp()) {
+                getQueso().melt(true);
+            }
 
-         while (tMelting || tToast) {
-             gtortilla.setCurrentTemp(gtortilla.getCurrentTemp()
-                     + getHeatLevel());
-             getQueso().setCurrentTemp(gqueso.getCurrentTemp()
-                     + getHeatLevel());
-             if (gtortilla.getCurrentTemp() >= gtortilla.getToastTemp()) {
-                 getTortilla().toast(true);
-             }
-             if (getQueso().getCurrentTemp() >= getQueso().getMeltingTemp()) {
-                 getQueso().melt(true);
-             }
-
-         }
+        }
 
          if (getQueso().isMelted() && getTortilla().isToasted()) {
              return "Perfect quesadilla";
@@ -54,6 +54,13 @@ public class Quesadilla {
              return "You ran out of gas";
          }
 
+    }
+    /**
+     * @return se ejecuta prepare double para preparar qusadillas
+     * con cierto queso y tortilla
+     */
+    public final String prepareDouble() {
+        return " ";
     }
     /**
      * @return regresa el queso

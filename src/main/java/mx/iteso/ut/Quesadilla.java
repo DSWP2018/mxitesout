@@ -56,6 +56,10 @@ public class Quesadilla {
         }
     }
 
+    /**
+     * Instance method for cooking a double quesadilla.
+     * @return string value
+     */
     public final String prepareDouble() {
         queso = getQueso();
         tortilla = getTortilla();
@@ -77,20 +81,34 @@ public class Quesadilla {
             }
         }
 
-        if (queso.isMelted() && tortilla.isToasted() && tortilla2.isToasted()) {
-            return "Tortilla 1 tostada, tortilla 2 tostada, queso derretido.";
-        } else if (queso.isMelted() && tortilla.isToasted() && !tortilla2.isToasted()) {
-            return "Tortilla 1 tostada, tortilla 2 no tostada, queso derretido.";
-        } else if (queso.isMelted() && !tortilla.isToasted() && tortilla2.isToasted()) {
-            return "Tortilla 1 no tostada, tortilla 2 tostada, queso derretido.";
-        } else if (queso.isMelted() && !tortilla.isToasted() && !tortilla2.isToasted()) {
-            return "Tortilla 1 no tostada, tortilla 2 no tostada, queso derretido.";
-        } else if (!queso.isMelted() && tortilla.isToasted() && tortilla2.isToasted()) {
-            return "Tortilla 1 tostada, tortilla 2 tostada, queso no derretido.";
-        } else if (!queso.isMelted() && !tortilla.isToasted() && tortilla2.isToasted()) {
-            return "Tortilla 1 no tostada, tortilla 2 tostada, queso no derretido.";
-        } else if (!queso.isMelted() && tortilla.isToasted() && !tortilla2.isToasted()) {
-            return "Tortilla 1 tostada, tortilla 2 no tostada, queso no derretido.";
+        if (queso.isMelted() && tortilla.isToasted()
+                && tortilla2.isToasted()) {
+            return "Tortilla 1 tostada, "
+                    + "tortilla 2 tostada, queso derretido.";
+        } else if (queso.isMelted() && tortilla.isToasted()
+                && !tortilla2.isToasted()) {
+            return "Tortilla 1 tostada, "
+                    + "tortilla 2 no tostada, queso derretido.";
+        } else if (queso.isMelted()
+                && !tortilla.isToasted() && tortilla2.isToasted()) {
+            return "Tortilla 1 no tostada, "
+                   + "tortilla 2 tostada, queso derretido.";
+        } else if (queso.isMelted()
+                && !tortilla.isToasted() && !tortilla2.isToasted()) {
+            return "Tortilla 1 no tostada, "
+                   + "tortilla 2 no tostada, queso derretido.";
+        } else if (!queso.isMelted()
+                && tortilla.isToasted() && tortilla2.isToasted()) {
+            return "Tortilla 1 tostada, "
+                   + "tortilla 2 tostada, queso no derretido.";
+        } else if (!queso.isMelted()
+                && !tortilla.isToasted() && tortilla2.isToasted()) {
+            return "Tortilla 1 no tostada, "
+                   + "tortilla 2 tostada, queso no derretido.";
+        } else if (!queso.isMelted()
+                && tortilla.isToasted() && !tortilla2.isToasted()) {
+            return "Tortilla 1 tostada, "
+                   + "tortilla 2 no tostada, queso no derretido.";
         } else {
             return "You ran out of gas";
         }

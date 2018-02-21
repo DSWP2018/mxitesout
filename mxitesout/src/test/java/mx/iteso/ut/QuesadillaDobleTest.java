@@ -83,7 +83,22 @@ public class QuesadillaDobleTest {
     }
     @Test
     public void quesadillaPasable(){
+        when(mockedQueso.getMeltingTemperature()).thenReturn(20);
+        when(mockedTortilla.getToastTemperature()).thenReturn(10);
+        when(mockedSecondTortilla.getToastTemperature()).thenReturn(20);
+
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,14);
+        when(mockedTortilla.getCurrentTemperature()).thenReturn(2,8,14);
+        when(mockedSecondTortilla.getCurrentTemperature()).thenReturn(2,8,14);
+
+        when(mockedQueso.isMelted()).thenReturn(false);
+        when(mockedTortilla.isToasted()).thenReturn(true);
+        when(mockedSecondTortilla.isToasted()).thenReturn(false);
+
         assertEquals("Quesadilla doble pasable", quesadillaDoble.prepareDouble());
+        verify(mockedQueso, never()).melt(true);
+        verify(mockedTortilla, times(1)).toast(true);
+        //verify(mockedSecondTortilla, times(1)).toast(true);
     }
     @Test
     public void quesadillaMala(){
@@ -91,7 +106,7 @@ public class QuesadillaDobleTest {
         when(mockedTortilla.getToastTemperature()).thenReturn(20);
         when(mockedSecondTortilla.getToastTemperature()).thenReturn(20);
 
-        when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,8,14);
+        when(mockedQueso.getCurrentTemperature()).thenReturn(2,8,14);
         when(mockedTortilla.getCurrentTemperature()).thenReturn(2,8,8,14);
         when(mockedSecondTortilla.getCurrentTemperature()).thenReturn(2,8,8,14);
 
@@ -99,11 +114,12 @@ public class QuesadillaDobleTest {
         when(mockedTortilla.isToasted()).thenReturn(false);
         when(mockedSecondTortilla.isToasted()).thenReturn(false);
 
+        assertEquals("Quesadilla doble mala", quesadillaDoble.prepareDouble());
         verify(mockedQueso, times(1)).melt(true);
         verify(mockedTortilla, never()).toast(true);
         //verify(mockedSecondTortilla, times(1)).toast(true);
 
-        assertEquals("Quesadilla doble mala", quesadillaDoble.prepareDouble());
+
     }
     @Test
     public void outOfGas(){

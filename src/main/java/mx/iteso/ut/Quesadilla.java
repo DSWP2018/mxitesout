@@ -60,6 +60,12 @@ public class Quesadilla {
      * con cierto queso y tortilla
      */
     public final String prepareDouble() {
+        // tortilla 1 tostada, tortilla 2 tostada, queso derretido
+        // tortilla 1 no tostada, tortilla 2 tostada, queso derretido
+        // tortilla 1 no tostada, tortilla 2 tostada, queso no derretido
+        // tortilla 1 no tostada, tortilla 2 no tostada, queso no derretido
+        // tortilla 1 no tostada, tortilla 2 no tostada, queso derretido
+        // tortilla 1 tostada, tortilla 2 tostada, queso no derretido
         return " ";
     }
     /**

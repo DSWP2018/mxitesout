@@ -5,7 +5,7 @@ public class QuesoOaxaca implements Queso {
 /**VAR.*/
 private int cTemperature;
 /**VAR.*/
-private static int mTemperature = 14;
+private static final int MTEMPERATURE = 14;
 /**VAR.*/
 private boolean melt = false;
 /**@return boolean*/
@@ -18,12 +18,9 @@ melt = m;
 }
 /**@return int*/
 final int getmtemp() {
-return mTemperature;
+return MTEMPERATURE;
 }
-/**@param t int*/
-final void setmt(final int t) {
-mTemperature = t;
-}
+
 /**@return int*/
 final int getctemp() {
 return cTemperature;
@@ -42,7 +39,7 @@ return cTemperature;
 }
 /**@return int*/
 public final int getMeltingTemperature() {
-return mTemperature;
+return MTEMPERATURE;
 }
 /**@param temp int*/
 public final void setCurrentTemperature(final int temp) {

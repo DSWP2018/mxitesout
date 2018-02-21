@@ -4,7 +4,7 @@ public class TortillaHarina implements Tortilla {
 /**VAR.*/
 private int cTemperature;
 /**VAR.*/
-private static int tTemperature = 20;
+private static final int TTEMPERATURE = 20;
 /**VAR.*/
 private boolean toast = false;
 /**@return boolean*/
@@ -17,11 +17,7 @@ toast = t;
 }
 /**@return int*/
 final int getmtemp() {
-return tTemperature;
-}
-/**@param t int*/
-final void setmt(final int t) {
-tTemperature = t;
+return TTEMPERATURE;
 }
 /**@return int*/
 final int getctemp() {
@@ -37,7 +33,7 @@ return toast;
 }
 /**@return int*/
 public final int getToastTemperature() {
-return tTemperature;
+return TTEMPERATURE;
 }
 /**@return int*/
 public final int getCurrentTemperature() {

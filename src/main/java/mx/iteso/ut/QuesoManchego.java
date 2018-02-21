@@ -4,7 +4,7 @@ public class QuesoManchego implements Queso {
 /**VAR.*/
 private int cTemperature;
 /**VAR.*/
-private static int mTemperature = 18;
+private static final int MTEMPERATURE = 18;
 /**VAR.*/
 private boolean melt = false;
 /**@return boolean*/
@@ -17,11 +17,7 @@ melt = m;
 }
 /**@return int*/
 final int getmtemp() {
-return mTemperature;
-}
-/**@param t int*/
-final void setmt(final int t) {
-mTemperature = t;
+return MTEMPERATURE;
 }
 /**@return int*/
 final int getctemp() {
@@ -41,7 +37,7 @@ return cTemperature;
 }
 /**@return int*/
 public final int getMeltingTemperature() {
-return mTemperature;
+return MTEMPERATURE;
 }
 /**@param temp int*/
 public final void setCurrentTemperature(final int temp) {

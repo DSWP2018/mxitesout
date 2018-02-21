@@ -4,7 +4,7 @@ public class TortillaMaiz implements Tortilla {
 /**VAR.*/
 private int cTemperature;
 /**VAR.*/
-private static int tTemperature = 30;
+private static final int TTEMPERATURE = 30;
 /**VAR.*/
 private boolean toast = false;
 /**@return boolean*/
@@ -17,12 +17,9 @@ toast = t;
 }
 /**@return int*/
 final int getmtemp() {
-return tTemperature;
+return TTEMPERATURE;
 }
-/**@param t int*/
-final void setmt(final int t) {
-tTemperature = t;
-}
+
 /**@return int*/
 final int getctemp() {
 return cTemperature;
@@ -37,7 +34,7 @@ return toast;
 }
 /**@return int*/
 public final int getToastTemperature() {
-return tTemperature;
+return TTEMPERATURE;
 }
 /**@return int*/
 public final int getCurrentTemperature() {

@@ -46,17 +46,17 @@ public class Quesadilla {
     }
 
     /**
-     * Metodo para crear una quesadilla doble (dos tortillas, un solo queso)
-     * @return string con el estado de la quesadilla
+     * Metodo para crear una quesadilla doble (dos tortillas, un solo queso).
+     * @return string con el estado de la quesadilla.
      * */
 
     public final String prepareDouble() {
 
         String result = "Go get UberEats, please!";
 
-        while(queso.getCurrentTemp() < queso.getMeltingTemperature() &&
-                tortilla.getCurrentTemp() < tortilla.getToastTem()  &&
-                tortilla2.getCurrentTemp() < tortilla2.getToastTem()) {
+        while (queso.getCurrentTemp() < queso.getMeltingTemperature()
+                && tortilla.getCurrentTemp() < tortilla.getToastTem()
+                && tortilla2.getCurrentTemp() < tortilla2.getToastTem()) {
 
             tortilla.setCurrentTemp(tortilla.getCurrentTemp() + heatLevel);
             tortilla2.setCurrentTemp(tortilla2.getCurrentTemp() + heatLevel);
@@ -76,13 +76,19 @@ public class Quesadilla {
 
         // tortilla 1 tostada, tortilla 2 tostada, queso derretido
 
-        if(tortilla.isToasted() && tortilla2.isToasted() && queso.isMelted()) {
+        if (tortilla.isToasted()
+                && tortilla2.isToasted()
+                && queso.isMelted()) {
             result = "Spledid double quesadilla";
-        } else if((tortilla.isToasted() || tortilla2.isToasted()) && queso.isMelted()) {
+        } else if ((tortilla.isToasted()
+                || tortilla2.isToasted()) && queso.isMelted()) {
             result = "Just a good  double quesadilla";
-        } else if(tortilla.isToasted() && tortilla2.isToasted() && !queso.isMelted()) {
+        } else if (tortilla.isToasted()
+                && tortilla2.isToasted()
+                && !queso.isMelted()) {
             result = "Weak double quesadilla";
-        } else if((tortilla.isToasted() || tortilla2.isToasted()) && !queso.isMelted()) {
+        } else if ((tortilla.isToasted() || tortilla2.isToasted())
+                && !queso.isMelted()) {
             result = "Notoriously bad quesadilla";
         }
 
@@ -99,16 +105,27 @@ public class Quesadilla {
     }
 */
 
-    public void setQueso(Queso queso) {
-        this.queso = queso;
+    /**
+     * Metodo para asignar un tipo de queso.
+     @param ques recibe queso
+     */
+    public final void setQueso(final Queso ques) {
+        queso = ques;
     }
 
-
-    public void setTortilla(Tortilla tortilla) {
-        this.tortilla = tortilla;
+    /**
+     * Metodo para asignar un tipo de queso.
+     @param tortill recibe tortilla
+     */
+    public final void setTortilla(final Tortilla tortill) {
+        tortilla = tortill;
     }
 
-    public void setTortilla2(Tortilla tortilla2) {
-        this.tortilla2 = tortilla2;
+    /**
+     * Metodo para asignar un tipo de queso @param tortill2.
+     * @param tortill2 recibe una segunda torilla
+     */
+    public final void setTortilla2(final Tortilla tortill2) {
+        tortilla2 = tortill2;
     }
 }

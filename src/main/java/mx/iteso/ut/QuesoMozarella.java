@@ -14,15 +14,15 @@ public class QuesoMozarella implements Queso {
      * La temperatura de cocción actual.
      * La temperatura de derretimiento
      */
-    int Temperature, meltTemp;
+    private int currentTemperature, meltTemp;
 
     /**
      * Método para construir el queso.
      * Inicializa las variables
      */
-    public void QuesoMozarella(){
+    public QuesoMozarella() {
         this.melt = false;
-        this.Temperature = 0;
+        this.currentTemperature = 0;
         this.meltTemp = 18;
     }
 
@@ -30,34 +30,30 @@ public class QuesoMozarella implements Queso {
      * Método para conocer si el queso esta derretido.
      * @return si esta derretido o no
      */
-    public boolean isMelted(){
-        if(melt)
-            return  true;
-        else
-            return false;
+    public final boolean isMelted() {
+        return melt;
     }
-
     /**
      * Método para obtener la temperatura actual de cocción.
      * @return la temperatura actual
      */
-    public final int getCurrentTemperature(){
-        return this.Temperature;
+    public final int getCurrentTemperature() {
+        return this.currentTemperature;
     }
 
     /**
      * Método para establecer la temperatura de cocción.
      * @param newTemp nueva temperatura
      */
-    public final void setCurrentTemperature(int newTemp){
-        this.Temperature = newTemp;
+    public final void setCurrentTemperature(final int newTemp) {
+        this.currentTemperature = newTemp;
     }
 
     /**
      * Método para obtener la temperatura de derretimiento.
      * @return la temperatura guardada e la que el queso se derrite.
      */
-    public final int getMeltingTemperature(){
+    public final int getMeltingTemperature() {
         return this.meltTemp;
     }
 
@@ -65,7 +61,7 @@ public class QuesoMozarella implements Queso {
      * Método para establecer si está derretido el queso.
      * @param m status de derretimiento
      */
-    public final void melt(boolean m){
+    public final void melt(final boolean m) {
         this.melt = m;
     }
 

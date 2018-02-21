@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2018</copyright>
     <item>
-      <title>File: 5,
-             Errors: 68,
+      <title>File: 4,
+             Errors: 49,
              Warnings: 0,
              Infos: 0
       </title>
@@ -44,20 +44,6 @@ under the License.
             </tr>
           </thead>
           <tbody>
-                          <tr>
-                <td>
-                  <a href="http://maven.apache.org/checkstyle.html#mx.iteso.ut.Queso.java">mx/iteso/ut/Queso.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
                           <tr>
                 <td>
                   <a href="http://maven.apache.org/checkstyle.html#mx.iteso.ut.TortillaMaiz.java">mx/iteso/ut/TortillaMaiz.java</a>
@@ -111,7 +97,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  20
+                  1
                 </td>
               </tr>
                       </tbody>

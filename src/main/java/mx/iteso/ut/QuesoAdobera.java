@@ -24,7 +24,7 @@ public class QuesoAdobera implements Queso {
     public QuesoAdobera() {
         this.melt = false;
         this.currentTemperature = 0;
-        this.meltTemp = 14;
+        this.meltTemp = 35;
     }
 
     /**

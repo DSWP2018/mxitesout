@@ -1,31 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="6.18">
-<file name="C:\Users\Mariana Salas\mxitesout\src\main\java\mx\iteso\ut\Queso.java">
-</file>
 <file name="C:\Users\Mariana Salas\mxitesout\src\main\java\mx\iteso\ut\QuesoAdobera.java">
 <error line="27" column="25" severity="error" message="&apos;14&apos; es un número mágico." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
 </file>
 <file name="C:\Users\Mariana Salas\mxitesout\src\main\java\mx\iteso\ut\QuesoMozarella.java">
-<error line="17" column="9" severity="error" message="El nombre &apos;Temperature&apos; debe coincidir con el patrón &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="17" column="9" severity="error" message="La variable &apos;Temperature&apos; debe ser privada y tener métodos de acceso." source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
-<error line="17" column="22" severity="error" message="La variable &apos;meltTemp&apos; debe ser privada y tener métodos de acceso." source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
-<error line="23" column="5" severity="error" message="El método &apos;QuesoMozarella&apos; no está diseñado para ser extendido - necesita ser abstracto, final o vacío." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="23" column="17" severity="error" message="El nombre &apos;QuesoMozarella&apos; debe coincidir con el patrón &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
-<error line="23" column="17" severity="error" message="Nombre de método &apos;QuesoMozarella&apos; no debe ser igual al nombre de clase envolvente." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
-<error line="23" column="33" severity="error" message="&apos;{&apos; no está precedido de espacio en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 <error line="26" column="25" severity="error" message="&apos;18&apos; es un número mágico." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="33" column="5" severity="error" message="El método &apos;isMelted&apos; no está diseñado para ser extendido - necesita ser abstracto, final o vacío." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="33" column="30" severity="error" message="&apos;{&apos; no está precedido de espacio en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="34" severity="error" message="La construcción &apos;if&apos; debe usar &apos;{}&apos; (llaves)." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
-<error line="34" column="9" severity="error" message="Se puede eliminar la lógica condicional." source="com.puppycrawl.tools.checkstyle.checks.coding.SimplifyBooleanReturnCheck"/>
-<error line="34" column="11" severity="error" message="&apos;if&apos; no está seguido de espacio en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="36" severity="error" message="La construcción &apos;else&apos; debe usar &apos;{}&apos; (llaves)." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
-<error line="44" column="45" severity="error" message="&apos;{&apos; no está precedido de espacio en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="52" column="45" severity="error" message="El parámetro newTemp debería ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
-<error line="52" column="57" severity="error" message="&apos;{&apos; no está precedido de espacio en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="60" column="45" severity="error" message="&apos;{&apos; no está precedido de espacio en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="68" column="28" severity="error" message="El parámetro m debería ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
-<error line="68" column="38" severity="error" message="&apos;{&apos; no está precedido de espacio en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 </file>
 <file name="C:\Users\Mariana Salas\mxitesout\src\main\java\mx\iteso\ut\TortillaHarina.java">
 <error line="3" severity="error" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>

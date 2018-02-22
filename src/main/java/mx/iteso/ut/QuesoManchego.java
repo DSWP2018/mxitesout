@@ -1,33 +1,61 @@
 package mx.iteso.ut;
 
+/** Class QuesoManchego. /*
+ *
+ */
 public class QuesoManchego implements Queso {
-    private boolean melted;
-    private int meltingTemperature;
-    private int currentTemperature;
+    /**Declare variables.*/
 
-    public QuesoManchego(){
-        meltingTemperature = 80;
-        currentTemperature = 25;
+    private boolean melted; /** Boolean melted.*/
+    static final int MT = 80; /**Melting temperature.*/
+    static final int CT = 25; /**Current temperature.*/
+    private int meltingTemperature = MT; /** Int meltingTemp.*/
+    private int currentTemperature = CT; /** Int currentTemp.*/
+
+    /** Constructor QuesoManchego. /*
+     *
+     */
+    public QuesoManchego() {
         melted = false;
     }
 
-    public boolean isMelted() {
+    /** Method isMelted. /*
+     *
+     * @return if the Queso is melted.
+     */
+    public final boolean isMelted() {
         return melted;
     }
 
-    public int getCurrentTemperature() {
+    /**Method getCurrentTemperature. /*
+     *
+     * @return the current temperature.
+     */
+    public final int getCurrentTemperature() {
         return currentTemperature;
     }
 
-    public int getMeltingTemperature() {
+    /** Method getMeltingTemperature. /*
+     *
+     * @return the melting temperature.
+     */
+    public final int getMeltingTemperature() {
         return meltingTemperature;
     }
 
-    public void setCurrentTemperature(int temp) {
+    /**Method setCurrentTemperature. /*
+     *
+     * @param temp set the new temperature.
+     */
+    public final void setCurrentTemperature(final int temp) {
         this.currentTemperature = temp;
     }
 
-    public void melt(boolean melted) {
-        this.melted = melted;
+    /**Method melt. /*
+     *
+     * @param ifmelted set when is melted.
+     */
+    public final void melt(final boolean ifmelted) {
+        this.melted = ifmelted;
     }
 }

@@ -32,14 +32,14 @@ public class QuesadillaTest{
     @Before
     public void setUp (){
         /*quesadilla.setQueso(mock_queso);
-        quesadilla.setTortilla_1(mock_tortilla);*/
+        quesadilla.setTortilla1(mock_tortilla);*/
         quesadilla = new Quesadilla();
         mockedTortilla = mock(Tortilla.class);
         mockedTortilla_2 = mock(Tortilla.class);
         mockedQueso = mock(Queso.class);
         quesadilla.setQueso(mockedQueso);
-        quesadilla.setTortilla_1(mockedTortilla);
-        quesadilla.setTortilla_2(mockedTortilla_2);
+        quesadilla.setTortilla1(mockedTortilla);
+        quesadilla.setTortilla2(mockedTortilla_2);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class QuesadillaTest{
         Assert.assertEquals("Perfect quesadilla", quesadilla.prepareSingle());
 
         verify(quesadilla.getQueso(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(3)).getCurrentTemperature();
 
         verify(mockedQueso, times(1)).melt(true);
         verify(mockedTortilla, times(1)).toast(true);
@@ -75,7 +75,7 @@ public class QuesadillaTest{
         Assert.assertEquals("Good quesadilla", quesadilla.prepareSingle());
 
         verify(quesadilla.getQueso(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(3)).getCurrentTemperature();
 
         verify(mockedQueso, times(1)).melt(true);
         verify(mockedTortilla, times(0)).toast(true);
@@ -95,7 +95,7 @@ public class QuesadillaTest{
         Assert.assertEquals("Terrible quesadilla", quesadilla.prepareSingle());
 
         verify(quesadilla.getQueso(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(4)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(4)).getCurrentTemperature();
 
         verify(mockedQueso, times(0)).melt(true);
         verify(mockedTortilla, times(1)).toast(true);
@@ -114,7 +114,7 @@ public class QuesadillaTest{
         Assert.assertEquals("You ran out of gas", quesadilla.prepareSingle());
 
         verify(quesadilla.getQueso(), times(1)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(0)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(0)).getCurrentTemperature();
 
         verify(mockedQueso, times(0)).melt(true);
         verify(mockedTortilla, times(0)).toast(true);
@@ -138,8 +138,8 @@ public class QuesadillaTest{
         Assert.assertEquals("Perfect quesadilla", quesadilla.prepareDouble());
 
         verify(quesadilla.getQueso(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(3)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_2(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla2(), times(3)).getCurrentTemperature();
 
         verify(mockedQueso, times(1)).melt(true);
         verify(mockedTortilla, times(1)).toast(true);
@@ -164,8 +164,8 @@ public class QuesadillaTest{
         Assert.assertEquals("Both tortillas not toasted but queso melted", quesadilla.prepareDouble());
 
         verify(quesadilla.getQueso(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(3)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_2(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla2(), times(3)).getCurrentTemperature();
 
         verify(mockedQueso, times(1)).melt(true);
         verify(mockedTortilla, times(0)).toast(true);
@@ -190,8 +190,8 @@ public class QuesadillaTest{
         Assert.assertEquals("Tortillas toasted but queso not melted", quesadilla.prepareDouble());
 
         verify(quesadilla.getQueso(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_2(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(4)).getCurrentTemperature();
+        verify(quesadilla.getTortilla2(), times(3)).getCurrentTemperature();
 
         verify(mockedQueso, times(0)).melt(true);
         verify(mockedTortilla, times(1)).toast(true);
@@ -216,8 +216,8 @@ public class QuesadillaTest{
         Assert.assertEquals("Queso melted and tortilla 1 toasted but tortilla 2 not toasted", quesadilla.prepareDouble());
 
         verify(quesadilla.getQueso(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(3)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_2(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla2(), times(3)).getCurrentTemperature();
 
         verify(mockedQueso, times(1)).melt(true);
         verify(mockedTortilla, times(1)).toast(true);
@@ -243,8 +243,8 @@ public class QuesadillaTest{
         Assert.assertEquals("Queso melted and tortilla 2 toasted but tortilla 1 not toasted", quesadilla.prepareDouble());
 
         verify(quesadilla.getQueso(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(3)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_2(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(3)).getCurrentTemperature();
+        verify(quesadilla.getTortilla2(), times(3)).getCurrentTemperature();
 
         verify(mockedQueso, times(1)).melt(true);
         verify(mockedTortilla, times(0)).toast(true);
@@ -270,8 +270,8 @@ public class QuesadillaTest{
         Assert.assertEquals("Queso not melted and tortilla 2 not toasted but tortilla 1 toasted", quesadilla.prepareDouble());
 
         verify(quesadilla.getQueso(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(4)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_2(), times(4)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(4)).getCurrentTemperature();
+        verify(quesadilla.getTortilla2(), times(4)).getCurrentTemperature();
 
         verify(mockedQueso, times(0)).melt(true);
         verify(mockedTortilla, times(0)).toast(true);
@@ -297,8 +297,8 @@ public class QuesadillaTest{
         Assert.assertEquals("You ran out of gas", quesadilla.prepareDouble());
 
         verify(quesadilla.getQueso(), times(1)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_1(), times(0)).getCurrentTemperature();
-        verify(quesadilla.getTortilla_2(), times(0)).getCurrentTemperature();
+        verify(quesadilla.getTortilla1(), times(0)).getCurrentTemperature();
+        verify(quesadilla.getTortilla2(), times(0)).getCurrentTemperature();
 
         verify(mockedQueso, times(0)).melt(true);
         verify(mockedTortilla, times(0)).toast(true);

@@ -1,33 +1,60 @@
 package mx.iteso.ut;
 
-public class TortillaHarina implements Tortilla{
-    private boolean toasted;
-    private int toastTemperature;
-    private int currentTemperature;
+/**Class TortillaHarina. /*
+ *
+ */
+public class TortillaHarina implements Tortilla {
+    /**Declare variables. */
+    private boolean toasted; /**Boolean toasted. */
+    static final int TT = 60;   /** Toasted temperature. */
+    static final int CT = 25;    /** Current temperature. */
+    private int toastTemperature = TT; /**int TT. */
+    private int currentTemperature = CT; /**int CT. */
 
-    public TortillaHarina(){
+    /**Constructor TortillaHarina. /*
+     *
+     */
+    public TortillaHarina() {
         toasted = false;
-        toastTemperature = 60;
-        currentTemperature = 25;
     }
 
-    public boolean isToasted() {
+    /** Method isToasted. /*
+     *
+     * @return if the tortilla isToasted.
+     */
+    public final boolean isToasted() {
         return toasted;
     }
 
-    public int getToastTemperature() {
+    /** Method getToastTemperature. /*
+     *
+     * @return Toast temperature.
+     */
+    public final int getToastTemperature() {
         return toastTemperature;
     }
 
-    public int getCurrentTemperature() {
+    /** Method getCurrentTemperature. /*
+     *
+     * @return Current temperature.
+     */
+    public final int getCurrentTemperature() {
         return currentTemperature;
     }
 
-    public void setCurrentTemperature(int temp) {
+    /** Method setCurrentTemperature. /*
+     *
+      * @param temp the new actual temperature.
+     */
+    public final void setCurrentTemperature(final int temp) {
         currentTemperature = temp;
     }
 
-    public void toast(boolean toasted) {
-        this.toasted = toasted;
+    /** Method toast. /*
+     *
+     * @param iftoast if the Tortilla is toasted.
+     */
+    public final void toast(final boolean iftoast) {
+        this.toasted = iftoast;
     }
 }

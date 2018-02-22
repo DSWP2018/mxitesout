@@ -23,7 +23,7 @@ public class QuesadillaImplementsTest {
     @Test
     public void perfectQuesadillaTest(){
         quesadilla.setQueso(adobera);
-        quesadilla.setTortilla_1(harina);
+        quesadilla.setTortilla1(harina);
         quesadilla.setHeatLevel(5);
 
         Assert.assertEquals("Perfect quesadilla", quesadilla.prepareSingle());
@@ -32,7 +32,7 @@ public class QuesadillaImplementsTest {
     @Test
     public void goodQuesadillaTest(){
         quesadilla.setQueso(adobera);
-        quesadilla.setTortilla_1(maiz);
+        quesadilla.setTortilla1(maiz);
         quesadilla.setHeatLevel(5);
 
         Assert.assertEquals("Good quesadilla", quesadilla.prepareSingle());
@@ -42,7 +42,7 @@ public class QuesadillaImplementsTest {
     @Test
     public void terribleQuesadillaTest(){
         quesadilla.setQueso(manchego);
-        quesadilla.setTortilla_1(harina);
+        quesadilla.setTortilla1(harina);
         quesadilla.setHeatLevel(5);
 
         Assert.assertEquals("Terrible quesadilla", quesadilla.prepareSingle());
@@ -51,10 +51,10 @@ public class QuesadillaImplementsTest {
     @Test
     public void noQuesadillaTest(){
         quesadilla.setQueso(manchego);
-        quesadilla.setTortilla_1(maiz);
+        quesadilla.setTortilla1(maiz);
         quesadilla.setHeatLevel(5);
         quesadilla.getQueso().setCurrentTemperature(85);
-        quesadilla.getTortilla_1().setCurrentTemperature(85);
+        quesadilla.getTortilla1().setCurrentTemperature(85);
 
         Assert.assertEquals("You ran out of gas", quesadilla.prepareSingle());
     }

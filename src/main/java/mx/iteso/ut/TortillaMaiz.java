@@ -1,35 +1,51 @@
 package mx.iteso.ut;
 
-public class TortillaMaiz implements Tortilla{
+/**
+ * Clase Tortilla Maiz.
+ */
+public class TortillaMaiz implements Tortilla {
+    /**Atributo para indicar temperatura.*/
+    private int temp;
+    /**Atributo para indicar si está tostada o no.*/
+    private boolean toasted;
+    /**Atributo para indicar temperatura a la que se tuesta.*/
+    private int toastTemp;
 
-	int temp;
-	boolean toasted;
-	int toastTemp;
-	
-	public TortillaMaiz(){
-		this.temp = 0;
-		this.toasted = false;
-		this.toastTemp = 20;
-	}
-	
-	public boolean isToasted() {
-		return this.toasted;
-	}
+    /**Constructor de la clase.*/
+    public TortillaMaiz() {
+        this.temp = 0;
+        this.toasted = false;
+        this.toastTemp = 0;
+    }
 
-	public int getToastTemperature() {
-		return this.toastTemp;
-	}
+    /**Método que nos dice el estado de la tortilla.
+     * @return boolean, para saber si está o no tostada.*/
+    public final boolean isToasted() {
+        return this.toasted;
+    }
 
-	public int getCurrentTemperature() {
-		return this.temp;
-	}
+    /**Permite obtener la temperatura a la que se tuesta la tortilla.
+     * @return int, con la temperatura.*/
+    public final int getToastTemperature() {
+        return this.toastTemp;
+    }
 
-	public void setCurrentTemperature(int temp) {
-		this.temp = temp;
-	}
+    /**Permite obtener la temperatura a la que se encuentra la tortilla.
+     * @return int, con la temperatura.*/
+    public final int getCurrentTemperature() {
+        return this.temp;
+    }
 
-	public void toast(boolean toasted) {
-		this.toasted = toasted;
-	}
+    /**Permite indicar a qué temperatura se encuentra.
+     * @param newtemp para establecer la temperatura.*/
+    public final void setCurrentTemperature(final int newtemp) {
+        this.temp = newtemp;
+    }
+
+    /**Permite establecer si la tortilla está tostada o no.
+     * @param istoasted verdadero o falso.*/
+    public final void toast(final boolean istoasted) {
+        this.toasted = istoasted;
+    }
 
 }

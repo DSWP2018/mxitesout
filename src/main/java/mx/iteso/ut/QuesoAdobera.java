@@ -1,35 +1,51 @@
 package mx.iteso.ut;
 
-public class QuesoAdobera implements Queso{
-	
-	int temp;
-	boolean melted;
-	int melTemp;
-	
-	public QuesoAdobera(){
-		this.temp = 0;
-		this.melted = false;
-		this.melTemp = 18;
-	}
+/**
+ * Clase Queso Adobera.
+ */
+public class QuesoAdobera implements Queso {
+    /**Atributo para indicar temperatura.*/
+    private int temp;
+    /**Atributo para indicar si está derrtido o no.*/
+    private boolean melted;
+    /**Atributo para indicar temperatura a la que se derrite.*/
+    private int melTemp;
 
-	public boolean isMelted() {
-		return this.melted;
-	}
+    /**Constructor de la clase.*/
+    public QuesoAdobera() {
+        this.temp = 0;
+        this.melted = false;
+        this.melTemp = 0;
+    }
 
-	public int getCurrentTemperature() {
-		return this.temp;
-	}
+    /**Método que nos dice el estado del queso.
+     * @return boolean, para saber si está o no derretido.*/
+    public final boolean isMelted() {
+        return this.melted;
+    }
 
-	public int getMeltingTemperature() {
-		return this.melTemp;
-	}
+    /**Permite obtener la temperatura actual del queso.
+     * @return int, con la temperatura.*/
+    public final int getCurrentTemperature() {
+        return this.temp;
+    }
 
-	public void setCurrentTemperature(int temp) {
-		this.temp = temp;
-	}
+    /**Permite obtener la temperatura a la que se derrite el queso.
+     * @return int, con la temperatura.*/
+    public final int getMeltingTemperature() {
+        return this.melTemp;
+    }
 
-	public void melt(boolean melted) {
-		this.melted = melted;
-	}
-	
+    /**Permite indicar a qué temperatura se encuentra.
+     * @param newtemp para establecer la temperatura.*/
+    public final void setCurrentTemperature(final int newtemp) {
+        this.temp = newtemp;
+    }
+
+    /**Permite establecer si el queso está derretido o no.
+     * @param ismelted verdadero o falso.*/
+    public final void melt(final boolean ismelted) {
+        this.melted = ismelted;
+    }
+
 }

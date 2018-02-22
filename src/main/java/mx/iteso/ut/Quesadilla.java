@@ -67,12 +67,23 @@ public class Quesadilla {
 
     }
 
-    public String prepareDouble(){
-        while(getQueso().getCurrentTemperature()<getQueso().getMeltingTemperature() &&
-                getTortilla().getCurrentTemperature()<getTortilla().getToastTemperature() &&
-                getTortilla2().getCurrentTemperature()<getTortilla2().getToastTemperature()){
+    /**
+     * Metodo para hacer quesadilla doble.
+     * @return Regresa una cadena de texto
+     * indicando el tipo de quesadilla
+     */
+
+    public final String prepareDouble() {
+        while (getQueso().getCurrentTemperature()
+                < getQueso().getMeltingTemperature()
+                && getTortilla().getCurrentTemperature()
+                < getTortilla().getToastTemperature()
+                && getTortilla2().getCurrentTemperature()
+                < getTortilla2().getToastTemperature()) {
             getTortilla().setCurrentTemperature(
                     getTortilla().getCurrentTemperature() + getHeatLevel());
+            getTortilla2().setCurrentTemperature(
+                    getTortilla2().getCurrentTemperature() + getHeatLevel());
             getQueso().setCurrentTemperature(
                     getQueso().getCurrentTemperature() + getHeatLevel());
             if (getTortilla().getCurrentTemperature()
@@ -89,25 +100,39 @@ public class Quesadilla {
             }
         }
         //tortilla 1 tostada, tortilla 2 tostada, queso derretido (1, 1, 1)
-        if (getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted()) {
+        if (getQueso().isMelted()
+                && getTortilla().isToasted()
+                && getTortilla2().isToasted()) {
             return "Perfect double quesadilla";
         }
         //tortilla 1 tostada, tortilla 2 tostada, queso no derretido (1, 1, 0)
-        if (!getQueso().isMelted() && getTortilla().isToasted() && getTortilla2().isToasted()) {
+        if (!getQueso().isMelted()
+                && getTortilla().isToasted()
+                && getTortilla2().isToasted()) {
             return "Terrible double quesadilla";
         }
         //tortilla 1 no tostada, tortilla 2 tostada, queso derretido (0, 1, 1)
-        if (getQueso().isMelted() && (!getTortilla().isToasted() && getTortilla2().isToasted() ||
-                getTortilla().isToasted() && !getTortilla2().isToasted())) {
+        if (getQueso().isMelted()
+                && (!getTortilla().isToasted()
+                && getTortilla2().isToasted()
+                || getTortilla().isToasted()
+                && !getTortilla2().isToasted())) {
             return "Fair double quesadilla";
         }
-        //tortilla 1 no tostada, tortilla 2 tostada, queso no derretido (0, 1, 0)
-        if (!getQueso().isMelted() && (!getTortilla().isToasted() && getTortilla2().isToasted() ||
-                getTortilla().isToasted() && !getTortilla2().isToasted())) {
+        //tortilla 1 no tostada, tortilla 2 tostada
+        // queso no derretido (0, 1, 0)
+        if (!getQueso().isMelted()
+                && (!getTortilla().isToasted()
+                && getTortilla2().isToasted()
+                || getTortilla().isToasted()
+                && !getTortilla2().isToasted())) {
             return "Mediocre double quesadilla";
         }
-        //tortilla 1 no tostada, tortilla 2 no tostada, queso derretido (0, 0, 1)
-        if (getQueso().isMelted() && !getTortilla().isToasted() && !getTortilla2().isToasted()) {
+        //tortilla 1 no tostada, tortilla 2 no tostada
+        // queso derretido (0, 0, 1)
+        if (getQueso().isMelted()
+                && !getTortilla().isToasted()
+                && !getTortilla2().isToasted()) {
             return "Good double quesadilla";
         } else {
             return "You ran out of gas";
@@ -148,6 +173,12 @@ public class Quesadilla {
      */
     public final void setTortilla(final Tortilla tortillaNueva) {
         this.tortilla = tortillaNueva;
+    }
+    /**
+     *  @param  tortillaNueva que se va a utilizar
+     */
+    public final void setTortilla2(final Tortilla tortillaNueva) {
+        this.tortilla2 = tortillaNueva;
     }
 
     /**

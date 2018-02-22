@@ -1,5 +1,4 @@
 package mx.iteso.ut;
-
 /**
  * Interfaz de Queso.
  */

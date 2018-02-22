@@ -21,12 +21,10 @@ public class QuesoOaxaca implements Queso {
     /**
      *
      * @param meltingTemp set the meltingTemperature
-     * @param temp set current temp
      */
-    public QuesoOaxaca(final int meltingTemp, final int temp) {
+    public QuesoOaxaca(final int meltingTemp) {
         this.meltingTemperature = meltingTemp;
-        this.temperature = temp;
-        melted = false;
+
     }
 
     /**
@@ -67,6 +65,6 @@ public class QuesoOaxaca implements Queso {
      * @param pMelted sets if the cheese is melted
      */
     public final void melt(final boolean pMelted) {
-        this.melted = melted;
+        this.melted = pMelted;
     }
 }

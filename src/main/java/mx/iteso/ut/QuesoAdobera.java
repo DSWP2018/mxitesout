@@ -2,28 +2,23 @@ package mx.iteso.ut;
 
 public class QuesoAdobera implements Queso
 {
-    int temp;
-    int meltingTemp = 10;
-
     public boolean isMelted() {
         return false;
     }
 
     public int getCurrentTemperature() {
-        return this.temp;
+        return 0;
     }
 
     public int getMeltingTemperature() {
-        return this.meltingTemp;
+        return 0;
+    }
+
+    public void setCurrentTemperature(int temp) {
+
     }
 
     public void melt(boolean melted) {
-
-    }
-
-    public void setCurrentTemperature(int temp)
-    {
-        this.temp = temp;
 
     }
 }

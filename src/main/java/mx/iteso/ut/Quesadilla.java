@@ -5,43 +5,36 @@ package mx.iteso.ut;
  *
  */
 public class Quesadilla {
-
     /**
-     * @param cheese af
+     * queso.
      */
     private Queso queso;
     /**
-     * @param tortilla the tortilla for the quesadilla
+     * tortilla.
      */
-
     private Tortilla tortilla;
     /**
-     * @param heatLevel this the heat level (?)
+     * heat level.
      */
-
     private int heatLevel;
 
     /**
      *
-     * @return the status of your quesadillita
+     * @return the string for you quesadillita
      */
     public final String prepareSingle() {
 
-
-        /*If we change the condition || to &&
-            all the functions will enter to the cycle
-        */
-
         while (getQueso().getCurrentTemperature()
-                < getQueso().getMeltingTemperature()
+                 < getQueso().getMeltingTemperature()
                 && getTortilla().getCurrentTemperature()
-                < getTortilla().getToastTemperature()) {
-            getTortilla().setCurrentTemperature(
-                    getTortilla().getCurrentTemperature() + getHeatLevel()
-            );
-            getQueso().setCurrentTemperature(
-                    getQueso().getCurrentTemperature() + getHeatLevel()
-            );
+                 < getTortilla().getToastTemperature()) {
+                    getTortilla().setCurrentTemperature(
+                            getTortilla().getCurrentTemperature()
+                                    + getHeatLevel()
+                    );
+                    getQueso().setCurrentTemperature(
+                        getQueso().getCurrentTemperature() + getHeatLevel()
+                    );
             if (getTortilla().getCurrentTemperature()
                     >= getTortilla().getToastTemperature()) {
                 getTortilla().toast(true);
@@ -51,65 +44,81 @@ public class Quesadilla {
                 getQueso().melt(true);
             }
         }
-     if (getQueso().isMelted() && getTortilla().isToasted()) {
-         return "Perfect quesadilla";
-     }
-     if (getQueso().isMelted() && !getTortilla().isToasted()) {
-         return "Good quesadilla";
-     }
-     if (!getQueso().isMelted() && getTortilla().isToasted()) {
-         return "Terrible quesadilla";
-     } else {
-         return "You ran out of gas";
-     }
 
+        if (getQueso().isMelted() && getTortilla().isToasted()) {
+            return "Perfect quesadilla";
+        }
+        if (getQueso().isMelted() && !getTortilla().isToasted()) {
+            return "Good quesadilla";
+        }
+        if (!getQueso().isMelted() && getTortilla().isToasted()) {
+            return "Terrible quesadilla";
+        } else {
+            return "You ran out of gas";
+        }
     }
 
     /**
      *
-     * @return queso instance
+     * @return string for a double quesadilla
      */
-     final Queso getQueso() {
+    public final String prepareDouble() {
+        // tortilla 1 tostada, tortilla 2 tostada, queso derretido
+        // tortilla 1 no tostada, tortilla 2 tostada, queso derretido
+        // tortilla 1 no tostada, tortilla 2 tostada, queso no derretido
+        // tortilla 1 no tostada, tortilla 2 no tostada, queso no derretido
+        // tortilla 1 no tostada, tortilla 2 no tostada, queso derretido
+        // tortilla 1 tostada, tortilla 2 tostada, queso no derretido
+
+        return "";
+    }
+
+    /**
+     *
+     * @return get the cheese
+     */
+    public final Queso getQueso() {
         return queso;
     }
 
     /**
      *
-     * @param hQueso set the object queso
+     * @param pQueso to set it.
      */
-     final void  setQueso(final Queso hQueso) {
-        this.queso = queso;
+    public final void setQueso(final Queso pQueso) {
+        this.queso = pQueso;
     }
+
 
     /**
      *
-     * @return the tortilla instance
+     * @return the tortillita
      */
-     final Tortilla getTortilla() {
+    public final Tortilla getTortilla() {
         return tortilla;
     }
 
     /**
      *
-     * @param hTortilla set the tortillita
+     * @param pTortilla give me the tortilla
      */
-    final void setTortilla(final Tortilla hTortilla) {
-        this.tortilla = tortilla;
+    public final void setTortilla(final Tortilla pTortilla) {
+        this.tortilla = pTortilla;
     }
 
     /**
      *
-     * @return the heat level
+     * @return the heat level lol
      */
-     final int getHeatLevel() {
+    public final int getHeatLevel() {
         return heatLevel;
     }
 
     /**
      *
-     * @param hHeatLevel set the heat level
+     * @param pHeatLevel set the heat level jiji
      */
-     final void setHeatLevel(final int hHeatLevel) {
-        this.heatLevel = heatLevel;
+    public final void setHeatLevel(final int pHeatLevel) {
+        this.heatLevel = pHeatLevel;
     }
 }
